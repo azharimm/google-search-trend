@@ -75,6 +75,10 @@ p {
 	color: rgba(255, 255, 255, 0.7);
 }
 
+.text-middle span {
+	color: white;
+}
+
 .mt-grid-15 {
 	margin-top: 13vh;
 }
@@ -110,40 +114,12 @@ p {
 	color: #fff;
 	font-family: "Inconsolata", Consolas, monospace;
 }
-p span {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 100%;
-	border-left: 0.1em solid transparent;
-	-webkit-animation: typing 3s steps(16) forwards, cursor 1s infinite;
-	animation: typing 3s steps(16) forwards, cursor 1s infinite;
+.vue-typer {
+  font-family: monospace;
 }
-/* Animation */
-@-webkit-keyframes typing {
-	from {
-		width: 100%;
-	}
-	to {
-		width: 0;
-	}
+
+.vue-typer .custom.char {
+  color: white;
 }
-@-webkit-keyframes cursor {
-	50% {
-		border-color: white;
-	}
-}
-@keyframes typing {
-	from {
-		width: 100%;
-	}
-	to {
-		width: 0;
-	}
-}
-@keyframes cursor {
-	50% {
-		border-color: white;
-	}
-}
+
 </style>
