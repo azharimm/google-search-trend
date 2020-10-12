@@ -1,14 +1,14 @@
 <template>
 	<div id="app">
-		<div class="grid-layout grid-15">
-			<Grid v-for="i in 15" :key="i"/>
+		<div :class="`grid-layout grid-${gridCount}`">
+			<Grid v-for="i in gridCount" :key="i"/>
 		</div>
 		<Control />
 	</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import Grid from './components/Grid.vue';
 import Control from './components/Control.vue';
 export default {
@@ -17,8 +17,17 @@ export default {
 		Grid,
 		Control
 	},
+	mounted() {
+		this.getRegions();
+	},
 	computed: {
 		...mapGetters({
+			'gridCount': 'gridCount'
+		})
+	},
+	methods: {
+		...mapActions({
+			'getRegions': 'getRegions'
 		})
 	}
 };
@@ -75,11 +84,12 @@ body {
 
 .mt-grid-15 {
 	margin-top: 13vh;
+	font-size: 26px;
 }
 
 .mt-grid-8 {
 	margin-top: 20vh;
-	font-size: 24px;
+	font-size: 28px;
 }
 
 .mt-grid-4 {
@@ -99,6 +109,22 @@ body {
 
 .ml-10 {
 	margin-left: 10px;
+}
+
+.yellow {
+	background: #fabb05;
+}
+
+.blue {
+	background: #4285f4;
+}
+
+.red {
+	background: #ea4335;
+}
+
+.green {
+	background: #34a852;
 }
 
 .vue-typer {

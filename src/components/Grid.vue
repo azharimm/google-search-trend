@@ -1,15 +1,15 @@
 <template>
-	<div class="grid-item" style="background: #fabb05">
-		<div class="text-white mt-grid-15">
+	<div :class="`grid-item ${color}`">
+		<div :class="`text-white mt-grid-${gridCount}`">
 			<vue-typer
 				:text="[
 					'Arya Stark',
-					'Jon Snow Know',
+					'Jon Snow',
 					'Daenerys Targaryen',
 					'Melisandre',
 					'Tyrion Lannister',
 				]"
-				:repeat="1"
+				:repeat="Infinity"
 				:shuffle="true"
 				initial-action="typing"
 				:pre-type-delay="70"
@@ -19,7 +19,36 @@
 				erase-style="clear"
 				:erase-on-complete="false"
 				caret-animation="smooth"
+				@typed='onTyped'
 			></vue-typer>
 		</div>
 	</div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+export default {
+	data() {
+		return {
+			color: ''
+		}
+	},
+	mounted() {
+		const random = Math.floor(Math.random() * this.colors.length);
+		this.color =  this.colors[random];
+	},
+	computed: {
+		...mapGetters({
+			'gridCount': 'gridCount',
+			'colors': 'colors'
+		}),
+	},
+	methods: {
+		onTyped() {
+			console.log('hehe');
+			const random = Math.floor(Math.random() * this.colors.length);
+			this.color = this.colors[random];
+		}
+	}
+}
+</script>
