@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Grid from './components/Grid.vue';
 import Control from './components/Control.vue';
 export default {
@@ -15,6 +16,10 @@ export default {
 	components: {
 		Grid,
 		Control
+	},
+	computed: {
+		...mapGetters({
+		})
 	}
 };
 </script>
@@ -67,17 +72,6 @@ body {
 	border-radius: 5px;
 }
 
-p {
-	white-space: nowrap;
-	overflow: hidden;
-	font-family: "Source Code Pro", monospace;
-	font-size: 20px;
-	color: rgba(255, 255, 255, 0.7);
-}
-
-.text-middle span {
-	color: white;
-}
 
 .mt-grid-15 {
 	margin-top: 13vh;
@@ -107,13 +101,6 @@ p {
 	margin-left: 10px;
 }
 
-/* Basic styles */
-p {
-	position: relative;
-	float: left;
-	color: #fff;
-	font-family: "Inconsolata", Consolas, monospace;
-}
 .vue-typer {
   font-family: monospace;
 }
