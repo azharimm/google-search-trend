@@ -2,7 +2,7 @@
     <div class="select-region ml-10">
        <label>Showing the latest searches in</label>
        <select @change="changeRegion">
-           <option :value="reg" v-for="(reg, index) in regions" :key="index">
+           <option :value="index" v-for="(reg, index) in regions" :key="index">
                {{reg}}
            </option>
        </select>

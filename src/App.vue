@@ -18,7 +18,7 @@ export default {
 		Control
 	},
 	mounted() {
-		this.getRegions();
+		this.fetchTrends();
 	},
 	computed: {
 		...mapGetters({
@@ -27,7 +27,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			'getRegions': 'getRegions'
+			'fetchTrends': 'fetchTrends'
 		})
 	}
 };

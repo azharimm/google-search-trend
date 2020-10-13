@@ -2,13 +2,7 @@
 	<div :class="`grid-item ${color}`">
 		<div :class="`text-white mt-grid-${gridCount}`">
 			<vue-typer
-				:text="[
-					'Arya Stark',
-					'Jon Snow',
-					'Daenerys Targaryen',
-					'Melisandre',
-					'Tyrion Lannister',
-				]"
+				:text="trends"
 				:repeat="Infinity"
 				:shuffle="true"
 				initial-action="typing"
@@ -40,12 +34,12 @@ export default {
 	computed: {
 		...mapGetters({
 			'gridCount': 'gridCount',
-			'colors': 'colors'
+			'colors': 'colors',
+			'trends': 'trends'
 		}),
 	},
 	methods: {
 		onTyped() {
-			console.log('hehe');
 			const random = Math.floor(Math.random() * this.colors.length);
 			this.color = this.colors[random];
 		}
