@@ -1,24 +1,7 @@
-# google-search-trend
+# Install
+- clone
+- npm install / yarn install
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Screenshot
+- Demo : https://hottrend-91332.web.app/
+![Home](https://raw.githubusercontent.com/azharimm/google-search-trend/master/hottrend.gif)
