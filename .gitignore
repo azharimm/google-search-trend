@@ -24,3 +24,4 @@ pnpm-debug.log*
 .firebase
 .firebaserc
 firebase.json
+.netlify
