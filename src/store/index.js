@@ -87,8 +87,8 @@ const store = new Vuex.Store({
             commit('SET_GRID', gridCount);
         },
         async fetchTrends({commit}, region = 'all_regions') {
-            let response = await axios.get('https://cors-anywhere.herokuapp.com/https://trends.google.com/trends/hottrends/visualize/internal/data');
-            commit('SET_TREND', {trends: response.data, region});
+            let response = await axios.get('https://api-google-keyword-trends.herokuapp.com/trends');
+            commit('SET_TREND', {trends: response.data.data.result, region});
         }
     },
 	mutations: {
